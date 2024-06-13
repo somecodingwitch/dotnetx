@@ -1,6 +1,6 @@
 # 🛡 dotnetx
 
-**dotnetx** is an utility CLI for managint .NET installations and analyzing projects and solutions.
+**dotnetx** is an utility CLI for managing .NET installations and analyzing projects.
 
 > [!WARNING]
 >
@@ -8,19 +8,20 @@
 
 ## ❄️ Commands
 
-- [ ] dotnext install
-    - [ ] --version
-    - [ ] --all
+- [ ] dotnetx install
+    - [ ] --add-all
+    - [ ] --remove-all
+    - [ ] --add
+    - [ ] --remove
 - [x] dotnetx versions
     - [x] --list-pathes
     - [x] --list-runtimes
     - [ ] --show-not-installed
 - [ ] dotnetx csproj
-    - [ ] --dotnet-version
-    - [ ] --csharp-version
     - [ ] --assembly-metadata
-    - [ ] --project-type
     - [ ] --all-dependencies
     - [ ] --used-dependencies
     - [ ] --unused-dependencies
-- [ ] dotnet sln
+    - [ ] --remove-unused-dependencies
+    - [ ] --unused-namespace-references
+    - [ ] --info
