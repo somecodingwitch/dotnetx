@@ -1,4 +1,4 @@
-import { CommandEnvironment } from "./commands/CommandEnvironment.js";
+import { CommandEnvironment } from "./commands/command-environment.js";
 
 const environment = new CommandEnvironment();
 environment.start();

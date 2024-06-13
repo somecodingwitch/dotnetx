@@ -1,6 +1,6 @@
 # 🛡 dotnetx
 
-**dotnetx** is an extension to dotnet command line tool and also a solution-project manager focused on providing a easy to use api to create, manage and ship projects with default or customized languages that support the .NET runtime.
+**dotnetx** is an utility CLI for managint .NET installations and analyzing projects and solutions.
 
 > [!WARNING]
 >
@@ -8,59 +8,19 @@
 
 ## ❄️ Features
 
-### Command-line tool
-
-\- **dotnetx** extends the functionalities of the default `dotnet` command and provides various others like project tree visualization and dynamic package management.
-
-Example:
-```bash
-dotnetx check-versions --list-runtimes
-```
-```
-> dotnetx vx.x.x
-
-> - Currently installed .NET versions
->        
-> - SDK 2.1.818
-> - SDK 6.0.414                                
-> - Runtime Microsoft.AspNetCore.App 2.1.30   
-> - Runtime Microsoft.AspNetCore.App 6.0.21   
-```
-
-
-\- The integration with **nuget** provide easy package management through projects and solutions, provide an easy visualization of nuget repository providers and also provide a hint system to help the developer to solve package-related problems. 
-
-Example:
-
-```bash
-dotnetx nuget add-source my-source https://source.net --local
-```
-```
-> dotnetx vx.x.x
-> Checking source reliability...
-> Source added with success in 0.94s.
-```
-
-```bash
-dotnetx install Custom.Package --source my-source
-```
-
-```
-> dotnetx vx.x.x
-> Accessing solution "MySolution"
-> Accessing source "my-source"
-> Installing package "Custom.Package"
-> Package "Custom.Package" v0.19.0 added with success in 0.75s.
-```
-
-<br>
-
-
-Troubleshooting tools can find common and customized problems in the target codebase and provide hints to solve them in the most seamless possible way.
-
-### Accessible API
-
-
- 
-### 
- 
+- [ ] dotnext install
+    - [ ] --version
+    - [ ] --all
+- [x] dotnetx versions
+    - [x] --list-pathes
+    - [x] --list-runtimes
+    - [ ] --show-not-installed
+- [ ] dotnetx csproj
+    - [ ] --dotnet-version
+    - [ ] --csharp-version
+    - [ ] --assembly-metadata
+    - [ ] --project-type
+    - [ ] --all-dependencies
+    - [ ] --used-dependencies
+    - [ ] --unused-dependencies
+- [ ] dotnet sln
