@@ -6,7 +6,7 @@
 >
 > **dotnetx** is a project in development, this means that the project is not ready to be used yet. A stable version is being developed right now and will appear in releases.
 
-## ❄️ Features
+## ❄️ Commands
 
 - [ ] dotnext install
     - [ ] --version
