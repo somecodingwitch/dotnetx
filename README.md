@@ -8,6 +8,7 @@
 
 ## ❄️ Commands
 
+- [x] dotnetx status
 - [ ] dotnetx install
     - [ ] --add-all
     - [ ] --remove-all

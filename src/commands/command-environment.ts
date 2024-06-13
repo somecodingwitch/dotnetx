@@ -11,8 +11,12 @@ class CommandEnvironment {
         const processArgs = process.argv.slice(2);
         const currentCommand = process.argv.slice(2)[0] as keyof typeof storedCommands;
 
-        console.log(title);
-        console.log('');
+        if (!processArgs.length) {
+            console.log(title);
+            console.log('');
+            //TODO: Show help
+        }
+
 
         if (currentCommand !== 'install') {
             checkForDotnet();
