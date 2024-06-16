@@ -17,7 +17,8 @@
 - [x] dotnetx versions
     - [x] --list-pathes
     - [x] --list-runtimes
-    - [ ] --show-not-installed
+    - [x] --list-not-installed-sdks
+    - [ ] --list-not-installed-runtimes
 - [ ] dotnetx csproj
     - [ ] --assembly-metadata
     - [ ] --all-dependencies
