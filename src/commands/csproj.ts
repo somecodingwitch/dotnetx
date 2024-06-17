@@ -11,35 +11,38 @@ async function _getCsprojData(path: string) {
     const xmlContent = (await readFile(path)).toString();
     const jsonContent = JSON.parse(toJson(xmlContent)).Project;
     
-    const propertyGroup = _flatAndDecapitalizeObjects(jsonContent.PropertyGroup)
-    const itemGroup = _flatAndDecapitalizeObjects(jsonContent.ItemGroup);
+    const propertyGroup = _flatObjectArray(jsonContent.PropertyGroup)
+    const itemGroup = _flatObjectArray(jsonContent.ItemGroup);
 
-    const metadata = propertyGroup;
-    const references = _flatPackageReferences(itemGroup.packageReference);
-    
+    const attributes = {
+        name: propertyGroup.Name,
+        version: propertyGroup.Version,
+        product: propertyGroup.Product,
+        company: propertyGroup.Company,
+        authors: propertyGroup.Authors
+    };
+
+    const compilation = {
+        targetFramework: propertyGroup.TargetFramework,
+        runtimeIdentifiers: propertyGroup.RuntimeIdentifiers && propertyGroup.RuntimeIdentifiers.split(';'),
+        packageVersion: propertyGroup.PackageVersion,
+        preserveCompilationContext: _boolFromString(propertyGroup.PreserveCompilationContext),
+        generatePackageOnBuild: _boolFromString(propertyGroup.GeneratePackageOnBuild)
+    };
+
     return {
-        metadata,
-        references
+        attributes,
+        compilation
     }
 }
 
-function _flatAndDecapitalizeObjects(obj: any[]) {
+function _flatObjectArray(obj: any[]) {
     const flat = obj.reduce((acc, cur) => ({ ...cur, ...acc }));
-    const x = {} as any;
-
-    for (const [key, value] of Object.entries(flat)) {
-        const newKey = key[0].toLowerCase() + key.slice(1);
-        x[newKey] = value;
-    }
-
-    return x;
+    return flat;
 }
 
-function _flatPackageReferences(obj: any[]) {
-    return obj.reduce((acc, curr) => {
-        return { [curr.Include]: curr.Version, ...acc }
-    });
+function _boolFromString(stringBool: string) {
+    return stringBool === 'true' ? true : false;
 }
-
 
 export { csproj }
