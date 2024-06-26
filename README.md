@@ -21,9 +21,9 @@
     - [ ] --list-not-installed-runtimes
 - [ ] dotnetx csproj
     - [ ] --assembly-metadata
-    - [ ] --all-dependencies
+    - [x] --all-dependencies
     - [ ] --used-dependencies
     - [ ] --unused-dependencies
     - [ ] --remove-unused-dependencies
     - [ ] --unused-namespace-references
-    - [ ] --info
+    - [x] --info
