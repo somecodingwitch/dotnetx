@@ -4,7 +4,7 @@ import { quickRunShellCommand } from '../command-line/quick-run-command.js';
 async function versions(flags: string[]) {
     if (flags.includes('--list-not-installed-sdks')) {
         const notInstalledSdks = await _notInstalledSdks();
-        console.log(`- ${chalk.bold.cyan('Currently not installed .NET SDK versions')}`);
+        console.log(chalk.bold.cyan('Currently not installed .NET SDK versions'));
         console.log('');
         console.log(notInstalledSdks.join('\n'));
         return;
@@ -18,7 +18,7 @@ async function versions(flags: string[]) {
     const listPathes = flags.includes('--list-pathes');
     const listRuntimes = flags.includes('--list-runtimes');
 
-    console.log(`- ${chalk.bold.cyan('Currently installed .NET versions')}`);
+    console.log(chalk.bold.cyan('Currently installed .NET versions'));
     console.log('');
 
     const internalVersions = await _versions(listPathes, listRuntimes);
