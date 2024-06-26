@@ -20,8 +20,4 @@
 - [ ] dotnetx csproj
     - [ ] --assembly-metadata
     - [x] --all-dependencies
-    - [ ] --used-dependencies
-    - [ ] --unused-dependencies
-    - [ ] --remove-unused-dependencies
-    - [ ] --unused-namespace-references
     - [x] --info
