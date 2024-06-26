@@ -1,6 +1,6 @@
 # 🛡 dotnetx
 
-**dotnetx** is an utility CLI for managing .NET installations and analyzing projects.
+**dotnetx** is an utility CLI for managing .NET installations.
 
 > [!WARNING]
 >
@@ -17,7 +17,3 @@
     - [ ] --remove-all
     - [ ] --add
     - [ ] --remove
-- [ ] dotnetx csproj
-    - [ ] --assembly-metadata
-    - [x] --all-dependencies
-    - [x] --info
