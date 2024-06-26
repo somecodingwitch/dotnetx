@@ -9,16 +9,14 @@
 ## ❄️ Commands
 
 - [x] dotnetx status
-- [ ] dotnetx install
-    - [ ] --add-all
-    - [ ] --remove-all
-    - [ ] --add
-    - [ ] --remove
 - [x] dotnetx versions
     - [x] --list-pathes
     - [x] --list-runtimes
     - [x] --list-not-installed-sdks
-    - [ ] --list-not-installed-runtimes
+    - [ ] --add-all
+    - [ ] --remove-all
+    - [ ] --add
+    - [ ] --remove
 - [ ] dotnetx csproj
     - [ ] --assembly-metadata
     - [x] --all-dependencies
