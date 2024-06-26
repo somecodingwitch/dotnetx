@@ -99,9 +99,12 @@ async function _versions(listPathes: boolean, listRuntimes: boolean) {
 }
 
 async function _notInstalledSdks() {
-    const apiUrl = "https://api.github.com/repos/dotnet/sdk/releases";
+    const apiUrl = "https://raw.githubusercontent.com/dotnet/core/main/release-notes/releases-index.json";
     const result = await fetch(apiUrl).then(r => r.json());
-    const allSdkVersions = result.map((item: any) => item.tag_name.slice(1)) as string[];
+
+    const allSdkVersions = result['releases-index']
+        .map((item: any) => item['latest-release']) as string[];
+
     const installedSdkVersions = (await _versions(false, false)).filter(x => x.type === 'SDK').map(x => x.name);
 
     return allSdkVersions.filter(version => !installedSdkVersions.includes(version)).sort((a, b) => Number(b[0]) - Number(a[0]));
